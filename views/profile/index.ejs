@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile Page</title>
+    <link rel="icon" href="../icons/twitter_black.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="container-title">
+                <h1>Twitter Clone</h1>
+            </div>
+            <!-- Navigation Links -->
+            <div class="container-nav">
+                <ul>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/profile">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="openModal()">Edit Profile</a></li>
+                    <li><a href="/auth/logout">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <!-- Aside for showing the following and followers list -->
+        <aside class="aside">
+            <div class="container-aside">
+                <div class="aside-header">
+                    <h2>Manage Connections</h2>
+                </div>
+                <hr>
+                <div class="button-container">
+                    <button class="btn" id="followers-btn">Followers</button>
+                    <button class="btn" id="following-btn">Following</button>
+                </div>
+                <div class="followers-list-container" style="display: none;">
+                    <h1>Followers List</h1>
+                    <div class="followers-list">
+                        <!-- Followers will be dynamically populated here -->
+                    </div>
+                </div>
+                <div class="following-list-container" style="display: none;">
+                    <h1>Following List</h1>
+                    <div class="following-list">
+                        <!-- Following users will be dynamically populated here -->
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Profile Section -->
+        <section class="profile-section">
+            <div class="container-profile">
+                <div class="profile-info">
+                    <div class="profile-header" id="profile-header">
+                        <img src="" alt="Profile Picture" class="profile-picture">
+                        <h2 class="username">@username</h2>
+                        <p class="full-name">Full Name</p>
+                        <p class="bio">This is a short bio about the user. It can include interests, hobbies, or
+                            anything the user wants to share.</p>
+                    </div>
+
+                </div>
+                <div class="profile-stats">
+                    <span class="stat"><strong id="total-tweets-count">0</strong></span>
+                    <span class="stat"><strong id="total-followers-count"><strong>0</strong></span>
+                    <span class="stat"><strong id="total-following-count"><strong>0</strong></span>
+                </div>
+                <div class="profile-tweets">
+                    <div class="user-tweets">
+                        <h2>User Tweets</h2>
+                        <div class="tweets-list">
+                            <!-- User tweets will be dynamically populated here -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+
+    <script src="../js/profile_script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup for Twitter</title>
+  <link rel="icon" href="../icons/twitter_black.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/signup.css"> <!-- Link to CSS file -->
+</head>
+
+<body>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="../icons/twitter.png" alt="Twitter Logo" width="50" height="50">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Explore</a></li>
+          <li><a href="#">Notifications</a></li>
+          <li><a href="#">Messages</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="/auth/main-login">Log In</a></li>
+        </ul>
+      </nav>
+      <div class="title">
+        <h1 class="website-title">Twitter Clone</h1>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <form id="signup_form" enctype="multipart/form-data">
+      <div class="signup-form">
+        <h2>Sign up for Twitter</h2>
+        <p>It's free and only takes a minute.</p>
+
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username_name" placeholder="Username" required>
+        </div>
+
+        <div class="form-group">
+          <label for="f_name">First Name</label>
+          <input type="text" id="f_name" name="fname_name" placeholder="First Name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="l_name">Last Name</label>
+          <input type="text" id="l_name" name="lname_name" placeholder="Last Name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="user_bio">Bio</label>
+          <textarea id="user_bio" name="bio_name" placeholder="Bio"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="user_email">Email</label>
+          <input type="email" id="user_email" name="email_name" placeholder="Email Address" required>
+        </div>
+
+        <div class="form-group">
+          <label for="profile_img">Profile Image</label>
+          <input type="file" id="profile_img" name="profile_img_name" accept="image/*">
+        </div>
+
+        <input type="hidden" id="user_timezone" name="timezone_name">
+
+        <button type="submit" class="btn">Sign up</button>
+
+        <p class="login_link"><a href="/auth/main-login">Already have an account? Log in</a></p>
+      </div>
+    </form>
+  </section>
+
+</body>
+
+<script>
+  document.getElementById('signup_form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    try {
+      const formData = new FormData(e.target);
+      const response = await fetch('/auth/signup-data', {
+        method: 'POST',
+        body: formData,
+      });
+      const result = await response.json();
+      alert(result.ok ? result.message : "Error: " + result.message);
+      if (result.ok) window.location.replace(result.link);
+    } catch (error) {
+      alert("Error in Catch: " + error.message);
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById('user_timezone').value = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  });
+</script>
+
+</html>

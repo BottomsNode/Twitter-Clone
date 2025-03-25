@@ -1,0 +1,376 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e6ecf0;
+}
+
+/* Header Styles */
+header {
+    background-color: #1DA1F2;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Title Styles */
+.container-title h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Navigation Container Styles */
+.container-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+/* Navigation Item Styles */
+.container-nav li {
+    margin-left: 20px;
+}
+
+/* Navigation Link Styles */
+.container-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+/* Navigation Link Hover Effect */
+.container-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Profile Data Styles */
+.profile-data {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+}
+
+/* Profile Image Styles */
+.profile-data img {
+    display: block;
+    margin: 0 auto 20px;
+    border: 1px solid #046ec5;
+    padding: 2px;
+    background-color: #0041f570;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Table Header and Data Styles */
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Table Row Styles */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Strong Text Styles */
+strong {
+    color: #333;
+}
+
+/* Heading Styles */
+h1 {
+    text-align: center;
+    color: #1DA1F2;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Main Container Styles */
+.main-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+/* Profile Container */
+.container-profile {
+    margin-left: auto;
+    margin-right: auto;
+    width: 160%;
+    max-width: 110vh;
+    max-height: 102vh;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.582);
+}
+
+/* Profile Header */
+.profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.profile-section p {
+    font-size: 16px;
+    color: #0f0f0f;
+    margin: 5px 0;
+}
+
+.profile-section strong {
+    color: #333;
+}
+
+.profile-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* Profile Stats */
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+/* Fixed Aside Styles */
+.aside {
+    width: 300px;
+    max-height: calc(100% - 110px);
+    background-color: #f9f9f9;
+    border-right: 1px solid #ccc;
+    padding: 25px;
+    position: fixed;
+    top: 75px;
+    left: 0;
+    border-radius: 0 0 15px 0;
+    border-color: #1da1f2;
+    overflow-y: auto;
+}
+
+/* Aside Header */
+.aside-header {
+    margin-bottom: 20px;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #007bffa4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Button Hover Effect */
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.follower-item.user-card {
+    background-color: #14a4fd;
+}
+
+.following-item.user-card {
+    background-color: #14a4fd;
+}
+
+.follower-item.user-card:hover {
+    background-color: rgba(20, 101, 155, 0.884);
+}
+
+.following-item.user-card:hover {
+    background-color: rgba(20, 101, 155, 0.884);
+}
+
+/* User Card Styles */
+.user-card {
+    padding: 2px 2px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Header Styles */
+.card-header {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+/* Card Body Styles */
+.card-body {
+    padding: 15px;
+}
+
+.bio-content {
+    margin-top: 5px;
+    font-style: italic;
+    color: #000000;
+    max-height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Card Footer Styles */
+.card-footer {
+    background-color: #e3e3e3;
+    padding: 10px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.img-class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Profile Image Styles */
+.profile-img {
+    border: 1px solid #1da1f2;
+    background-color: #0056b3;
+    padding: 2px;
+    width: 115px;
+    height: 110px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Heading Styles */
+.card-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Heading Styles */
+.user-card h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* List Styles */
+.followers-list,
+.following-list {
+    margin-top: 10px;
+}
+
+/* Profile Tweets Section Styles */
+.profile-tweets {
+    margin-top: 20px;
+}
+
+/* User Tweets Styles */
+.user-tweets {
+    margin-top: 25px;
+    background-color: #ffffff;
+    /* set height and max-heigth */
+    height: auto;
+    max-height: 85vh;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.301);
+}
+
+/* Heading Styles */
+.user-tweets h2 {
+    margin: 0 0 15px;
+    color: #1DA1F2;
+}
+
+/* Tweets List Styles */
+.tweets-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Tweet Item Styles */
+.tweet-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Tweet Content Styles */
+.tweet-content {
+    font-size: 16px;
+    color: #000000;
+}
+
+/* Tweet Date Styles */
+.tweet-date {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: linear-gradient(to top, #4db6f77e, #02aaf875);
+    color: #002c47;
+    position: fixed;
+    font-size: large;
+    bottom: 0;
+    width: 100%;
+}

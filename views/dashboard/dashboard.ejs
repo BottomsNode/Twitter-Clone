@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Clone</title>
+    <link rel="icon" href="../icons/twitter_black.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+    <!-- Welcome Message -->
+    <div id="welcomeMessage" class="welcome-message"></div>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="container-title">
+                <h1>Twitter Clone</h1>
+            </div>
+        </nav>
+    </header>
+
+    <div
+        style="background: #1c7dd2; padding: 20px; font-family: 'Helvetica Neue', sans-serif; font-size: 16px; overflow: hidden; position: relative;">
+        <marquee behavior="scroll" direction="left" scrollamount="10" style="color: #ffffff; font-weight: bold;">
+            🌟 Stay connected with the world! Follow us on Twitter! 🐦 @<span id="uname_marque"></span> 🌟
+        </marquee>
+    </div>
+    <div class="container">
+        <!-- Sidebar for Profile Information -->
+        <aside class="sidebar">
+            <h2>Profile Information</h2>
+            <div class="profile-image-div">
+                <img id="profileImage" src="https://api.dicebear.com/6.x/fun-emoji/svg?seed=JohnDoe"
+                    alt="Profile Image" />
+            </div>
+            <div class="profile-details">
+                <p><strong>Username:</strong> <span id="username"></span></p>
+                <p><strong>User Bio:</strong> <span id="bio"></span></p>
+                <p><strong>Full Name:</strong> <span id="fullName"></span></p>
+                <p><strong>Location:</strong> <span id="location"></span></p>
+                <p><strong>Joined:</strong> <span id="joinedDate"></span></p>
+            </div>
+            <div class="links-manage">
+                <a href="/profile" class="profile-link">View Profile</a>
+                <a href="/auth/logout" class="logout-link" onclick="return confirmLogout();">Logout</a>
+            </div>
+            <div id="popup" class="popup" style="display: none;">
+                <div class="popup-content">
+                    <span class="close-button" onclick="closePopup()">×</span>
+                    <h2 id="popup-title"></h2>
+                    <ul id="popup-list"></ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Sidebar Navigation (New Addition) -->
+        <aside class="sidebar-nav">
+            <!-- Navigation links can be added here -->
+        </aside>
+
+        <!-- Main Content: Tweet Section -->
+        <main class="main-content">
+            <div class="tweet-input">
+                <h2>Share Your Ideas</h2>
+                <form id="tweetForm" onsubmit="event.preventDefault(); shareTweet();">
+                    <textarea id="idea" rows="3" name="tweet-text" placeholder="What's happening?" required></textarea>
+                    <button id="share-tweet" class="btn" type="submit">Share</button>
+                </form>
+            </div>
+
+            <!-- Notification Popup -->
+            <div id="notification" class="notification hidden">
+                <span id="notification-message">Tweet liked!</span>
+            </div>
+
+            <!-- Modal Box for Reply -->
+            <div id="reply-modal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span id="close-modal" class="close">&times;</span>
+                    <h2>Reply to Tweet</h2>
+                    <textarea id="reply-input" rows="4" placeholder="Enter your reply..." required></textarea>
+                    <button id="submit-reply">Submit Reply</button>
+                </div>
+            </div>
+
+            <div class="tweets">
+                <!-- Retweets Section -->
+                <div id="retweets-container">
+                    <!-- <h2>Retweets</h2> -->
+                    <!-- Retweet cards will be dynamically inserted here -->
+                </div>
+                <!-- Tweets Section -->
+                <!-- <h2>Recent Tweets</h2> -->
+                <div class="tweet-list" id="tweet-list">
+                    <!-- Tweets will be displayed here -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Retweet Modal -->
+        <div id="retweet-modal" style="display: none;">
+            <div class="modal-content">
+                <span id="close-retweet-modal" class="close-button">&times;</span>
+                <h3>Retweet</h3>
+                <textarea id="retweet-input" placeholder="Add a comment..."></textarea>
+                <button id="submit-retweet">Retweet</button>
+            </div>
+        </div>
+
+        <!-- Users List: Follow Section -->
+        <aside class="follow-section">
+            <div id="userList" class="user-list">
+                <h2 class="h2-title">Users You May Want to Follow</h2>
+                <div id="userList-1" class="userList-1">
+                    <!-- User list items will be dynamically inserted here -->
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Link to Script -->
+    <script src="../js/dashboard_script.js"></script>
+    <script>
+        function shareTweet() {
+            window.location.href = "/dashboard";
+        }
+    </script>
+</body>
+
+</html>

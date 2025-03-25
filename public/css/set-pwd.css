@@ -1,0 +1,82 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f8fa;
+    color: #14171a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Heading Styles */
+h1 {
+    margin-bottom: 20px;
+    color: #1da1f2;
+}
+
+/* Form Styles */
+form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+/* Label Styles */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #14171a;
+}
+
+/* Input Styles */
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #e1e8ed;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input[type="password"]:focus {
+    border-color: #1da1f2;
+    outline: none;
+}
+
+/* Button Styles */
+button {
+    background-color: #1da1f2;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #0d8bcf;
+    transform: scale(1.05);
+}
+
+/* Error Message Styles */
+#error-message {
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+    form {
+        width: 90%;
+        padding: 20px;
+    }
+}

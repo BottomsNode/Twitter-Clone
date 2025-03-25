@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" href="../icons/twitter_black.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/main-login.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="../icons/twitter.png" alt="Twitter Logo" width="50" height="50">
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Explore</a></li>
+                    <li><a href="#">Notifications</a></li>
+                    <li><a href="#">Messages</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="/auth/signup">Sign Up</a></li>
+                </ul>
+            </nav>
+            <div class="title">
+                <h1 class="website-title">Twitter Clone</h1>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <h1>Log In</h1>
+            <form id="login_form">
+                <div class="form-group">
+                    <label for="username">Username/Email:</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username or email"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit">Log In</button>
+
+                <p class="reg_link"><a href="/auth/signup">New User? Register Here</a></p>
+                <p id="error-message" class="error-message"></p>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('login_form').addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+
+            try {
+                const response = await fetch('/auth/login', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    window.location.href = '/dashboard';
+                } else {
+                    const errorData = await response.json();
+                    document.getElementById('error-message').innerText = "Login failed: " + errorData.message;
+                }
+            } catch (error) {
+                console.error("Error during login:", error);
+                document.getElementById('error-message').innerText = "An unexpected error occurred.";
+            }
+        });
+    </script>
+
+</body>
+
+</html>
